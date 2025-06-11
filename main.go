@@ -4,6 +4,8 @@ import (
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"log"
+
+	"github.com/Umbra-Engine/umbra/engine/core"
 )
 
 type Game struct{}
@@ -21,8 +23,14 @@ func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {
 }
 
 func main() {
-	ebiten.SetWindowSize(640, 480)
-	ebiten.SetWindowTitle("Umbra Engine")
+	config, err := core.LoadConfig("config.yaml")
+	if err != nil {
+		log.Fatalf("failed to load config: %v", err)
+	}
+
+	ebiten.SetWindowSize(config.Window.Width, config.Window.Height)
+	ebiten.SetWindowTitle(config.Window.Title)
+	ebiten.SetFullscreen(config.Window.Fullscreen)
 
 	if err := ebiten.RunGame(&Game{}); err != nil {
 		log.Fatal(err)
