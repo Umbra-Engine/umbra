@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"log"
 )
 
@@ -12,7 +13,7 @@ func (g *Game) Update() error {
 }
 
 func (g *Game) Draw(screen *ebiten.Image) {
-	// TODO: Render Scene
+	ebitenutil.DebugPrint(screen, "Umbra Engine - Running")
 }
 
 func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {
