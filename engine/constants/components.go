@@ -10,8 +10,20 @@ const (
 
 // Common Component Field Keys
 const (
+	FieldActive = "active"
+
+	// SpriteRenderer fields
 	FieldTexture = "texture"
 	FieldLayer   = "layer"
 	FieldFOV     = "fov"
-	FieldActive  = "active"
+
+	// Transform fields
+	FieldPosition = "position"
+	FieldScale    = "scale"
+	FieldRotation = "rotation"
+
+	// Camera fields
+	FieldNear         = "near"
+	FieldFar          = "far"
+	FieldOrthographic = "orthographic"
 )
