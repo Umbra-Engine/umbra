@@ -2,6 +2,8 @@ package scene
 
 import (
 	"fmt"
+	"github.com/Umbra-Engine/umbra/engine/components"
+	"github.com/Umbra-Engine/umbra/engine/logger"
 	"github.com/Umbra-Engine/umbra/engine/mathx"
 )
 
@@ -11,12 +13,13 @@ type Scene struct {
 }
 
 type GameObject struct {
-	Name       string        `yaml:"name"`
-	Position   mathx.Vector3 `yaml:"position"`
-	Rotation   mathx.Vector3 `yaml:"rotation"`
-	Scale      mathx.Vector3 `yaml:"scale"`
-	Components []Component   `yaml:"components"`
-	Children   []GameObject  `yaml:"children"`
+	Name              string                        `yaml:"name"`
+	Position          mathx.Vector3                 `yaml:"position"`
+	Rotation          mathx.Vector3                 `yaml:"rotation"`
+	Scale             mathx.Vector3                 `yaml:"scale"`
+	Components        []Component                   `yaml:"components"`
+	Children          []GameObject                  `yaml:"children"`
+	RuntimeComponents []components.RuntimeComponent `yaml:"-"`
 }
 
 type Component struct {
@@ -88,4 +91,21 @@ func isNameUnique(name string, nameSet map[string]struct{}) bool {
 	}
 
 	return false
+}
+
+// initRuntimeComponents converts all YAML-parsed Components into typed RuntimeComponents.
+func initRuntimeComponents(obj *GameObject) {
+	for _, c := range obj.Components {
+		runtimeComp, err := components.BuildRuntimeComponent(c.Type, c.Data)
+		if err != nil {
+			logger.Error("Failed to build component %s: %v", c.Type, err)
+			continue
+		}
+		obj.RuntimeComponents = append(obj.RuntimeComponents, runtimeComp)
+	}
+
+	// Recurse into children
+	for i := range obj.Children {
+		initRuntimeComponents(&obj.Children[i])
+	}
 }
