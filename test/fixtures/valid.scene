@@ -1,0 +1,24 @@
+name: "TestScene"
+objects:
+  - name: "Player"
+    position: { x: 0, y: 0, z: 0 }
+    rotation: { x: 0, y: 0, z: 0 }
+    scale:    { x: 1, y: 1, z: 1 }
+    components:
+      - type: "SpriteRenderer"
+        texture: "player.png"
+    children:
+      - name: "PlayerShadow"
+        position: { x: 0, y: -1, z: 0 }
+        rotation: { x: 0, y: 0, z: 0 }
+        scale:    { x: 1, y: 1, z: 1 }
+        components:
+          - type: "Shadow"
+            opacity: 0.5
+  - name: "Camera"
+    position: { x: 0, y: 10, z: -10 }
+    rotation: { x: 45, y: 0, z: 0 }
+    scale:    { x: 1, y: 1, z: 1 }
+    components:
+      - type: "Camera"
+        fov: 60
