@@ -2,8 +2,9 @@ package scene
 
 import (
 	"gopkg.in/yaml.v3"
-	"log"
 	"os"
+
+	"github.com/Umbra-Engine/umbra/engine/logger"
 )
 
 func LoadScene(path string) (*Scene, error) {
@@ -20,9 +21,9 @@ func LoadScene(path string) (*Scene, error) {
 	// Validate the scene
 	if errs := scene.Validate(); len(errs) > 0 {
 		for _, e := range errs {
-			log.Println("Scene validation error:", e)
+			logger.Error("Scene validation error: %s", e.Error())
 		}
-		log.Fatalln("Scene validation failed.")
+		logger.Fatal("scene validation failed.")
 	}
 
 	// Apply defaults to all objects
