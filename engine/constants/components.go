@@ -26,4 +26,9 @@ const (
 	FieldNear         = "near"
 	FieldFar          = "far"
 	FieldOrthographic = "orthographic"
+
+	// Script fields
+	FieldEnabled   = "enabled"
+	FieldClassName = "classname"
+	FieldParams    = "params"
 )

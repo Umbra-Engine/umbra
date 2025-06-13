@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	s, err := scene.LoadScene("fixtures/missing_name.scene")
+	s, err := scene.LoadScene("fixtures/valid.scene")
 	if err != nil {
 		logger.Error("%s", err.Error())
 	}
