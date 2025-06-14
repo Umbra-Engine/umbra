@@ -6,7 +6,7 @@ const (
 	ComponentCamera         = "Camera"
 	ComponentTransform      = "Transform"
 	ComponentScript         = "Script"
-	ComponentRigidBody      = "RigidBody"
+	ComponentRigidBody2D    = "RigidBody2D"
 )
 
 // Common Component Field Keys
@@ -15,10 +15,10 @@ const (
 	FieldActive = "active"
 	FieldLayer  = "layer"
 	FieldMask   = "mask"
+	FieldFOV    = "fov"
 
 	// Sprite Renderer fields
 	FieldTexture = "texture"
-	FieldFOV     = "fov"
 
 	// Transform fields
 	FieldPosition = "position"
@@ -26,9 +26,18 @@ const (
 	FieldRotation = "rotation"
 
 	// Camera fields
-	FieldNear         = "near"
-	FieldFar          = "far"
-	FieldOrthographic = "orthographic"
+	FieldIsOrthographic   = "is_orthographic"
+	FieldOrthographicSize = "orthographic_size"
+	FieldNear             = "near"
+	FieldFar              = "far"
+	FieldClearColor       = "clear_color"
+	FieldPriority         = "priority"
+	FieldClearFlags       = "clear_flags"
+	FieldViewportRect     = "viewport_rect"
+	FieldZoom             = "zoom"
+	FieldCullingMask      = "culling_mask"
+	FieldOffset           = "offset"
+	FieldFollowTargetID   = "follow_target_id"
 
 	// Script fields
 	FieldEnabled   = "enabled"
