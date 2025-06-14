@@ -7,6 +7,7 @@ const (
 	ComponentTransform      = "Transform"
 	ComponentScript         = "Script"
 	ComponentRigidBody2D    = "RigidBody2D"
+	ComponentCollider2D     = "Collider2D"
 )
 
 // Common Component Field Keys
@@ -16,6 +17,7 @@ const (
 	FieldLayer  = "layer"
 	FieldMask   = "mask"
 	FieldFOV    = "fov"
+	FieldOffset = "offset"
 
 	// Sprite Renderer fields
 	FieldTexture = "texture"
@@ -36,7 +38,6 @@ const (
 	FieldViewportRect     = "viewport_rect"
 	FieldZoom             = "zoom"
 	FieldCullingMask      = "culling_mask"
-	FieldOffset           = "offset"
 	FieldFollowTargetID   = "follow_target_id"
 
 	// Script fields
@@ -56,4 +57,11 @@ const (
 	FieldTorque          = "torque"
 	FieldFreezePosition  = "freeze_position"
 	FieldFreezeRotation  = "freeze_rotation"
+
+	// Collider Fields
+	FieldType      = "type"
+	FieldSize      = "size"
+	FieldRadius    = "radius"
+	FieldPoints    = "points"
+	FieldIsTrigger = "is_trigger"
 )
