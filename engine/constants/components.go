@@ -10,6 +10,7 @@ const (
 	ComponentCollider2D     = "Collider2D"
 	ComponentLight          = "Light"
 	ComponentAudioSource    = "AudioSource"
+	ComponentTextRenderer   = "TextRenderer"
 )
 
 // Common Component Field Keys
@@ -21,6 +22,7 @@ const (
 	FieldFOV      = "fov"
 	FieldOffset   = "offset"
 	FieldPriority = "priority"
+	FieldColor    = "color"
 
 	// Sprite Renderer fields
 	FieldTexture = "texture"
@@ -68,7 +70,6 @@ const (
 	FieldIsTrigger = "is_trigger"
 
 	// Light Fields
-	FieldColor       = "color"
 	FieldIntensity   = "intensity"
 	FieldRange       = "range"
 	FieldAngle       = "angle"
@@ -87,4 +88,16 @@ const (
 	FieldMaxDistance = "max_distance"
 	FieldRolloff     = "rolloff"
 	FieldOutputGroup = "output_group"
+
+	// Text Renderer Fields
+	FieldText                = "text"
+	FieldFont                = "font"
+	FieldFontSize            = "font_size"
+	FieldHorizontalAlignment = "horizontal_alignment"
+	FieldVerticalAlignment   = "vertical_alignment"
+	FieldLineSpacing         = "line_spacing"
+	FieldMaxWidth            = "max_width"
+	FieldWrap                = "wrap"
+	FieldZIndex              = "z_index"
+	FieldBillboard           = "billboard"
 )
