@@ -9,16 +9,18 @@ const (
 	ComponentRigidBody2D    = "RigidBody2D"
 	ComponentCollider2D     = "Collider2D"
 	ComponentLight          = "Light"
+	ComponentAudioSource    = "AudioSource"
 )
 
 // Common Component Field Keys
 const (
 	// Shared fields
-	FieldActive = "active"
-	FieldLayer  = "layer"
-	FieldMask   = "mask"
-	FieldFOV    = "fov"
-	FieldOffset = "offset"
+	FieldActive   = "active"
+	FieldLayer    = "layer"
+	FieldMask     = "mask"
+	FieldFOV      = "fov"
+	FieldOffset   = "offset"
+	FieldPriority = "priority"
 
 	// Sprite Renderer fields
 	FieldTexture = "texture"
@@ -34,7 +36,6 @@ const (
 	FieldNear             = "near"
 	FieldFar              = "far"
 	FieldClearColor       = "clear_color"
-	FieldPriority         = "priority"
 	FieldClearFlags       = "clear_flags"
 	FieldViewportRect     = "viewport_rect"
 	FieldZoom             = "zoom"
@@ -73,5 +74,17 @@ const (
 	FieldAngle       = "angle"
 	FieldCastShadows = "cast_shadows"
 	FieldFalloff     = "falloff"
-	FieldLightType   = "light_type"
+
+	// Audio Source Fields
+	FieldClip        = "clip"
+	FieldVolume      = "volume"
+	FieldPitch       = "pitch"
+	FieldLoop        = "loop"
+	FieldPlayOnStart = "play_on_start"
+	FieldIsMuted     = "is_muted"
+	FieldSpatial     = "spatial"
+	FieldMinDistance = "min_distance"
+	FieldMaxDistance = "max_distance"
+	FieldRolloff     = "rolloff"
+	FieldOutputGroup = "output_group"
 )
