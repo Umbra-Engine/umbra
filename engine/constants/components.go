@@ -8,6 +8,7 @@ const (
 	ComponentScript         = "Script"
 	ComponentRigidBody2D    = "RigidBody2D"
 	ComponentCollider2D     = "Collider2D"
+	ComponentLight          = "Light"
 )
 
 // Common Component Field Keys
@@ -64,4 +65,13 @@ const (
 	FieldRadius    = "radius"
 	FieldPoints    = "points"
 	FieldIsTrigger = "is_trigger"
+
+	// Light Fields
+	FieldColor       = "color"
+	FieldIntensity   = "intensity"
+	FieldRange       = "range"
+	FieldAngle       = "angle"
+	FieldCastShadows = "cast_shadows"
+	FieldFalloff     = "falloff"
+	FieldLightType   = "light_type"
 )
