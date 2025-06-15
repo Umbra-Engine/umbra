@@ -11,6 +11,7 @@ const (
 	ComponentLight          = "Light"
 	ComponentAudioSource    = "AudioSource"
 	ComponentTextRenderer   = "TextRenderer"
+	ComponentUIComponent    = "UIComponent"
 )
 
 // Common Component Field Keys
@@ -100,4 +101,14 @@ const (
 	FieldWrap                = "wrap"
 	FieldZIndex              = "z_index"
 	FieldBillboard           = "billboard"
+
+	// UI Component Field
+	FieldAnchor        = "anchor"
+	FieldPivot         = "pivot"
+	FieldVisible       = "visible"
+	FieldInteractable  = "interactable"
+	FieldRaycastTarget = "raycast_target"
+	FieldClipChildren  = "clip_children"
+	FieldAutoLayout    = "auto_layout"
+	FieldPadding       = "padding"
 )
