@@ -11,10 +11,10 @@ Currently in early development. The goal is to provide a flexible, minimalist, a
 **Phase 1:** Core Framework & 2D MVP
 
 - [ ] Game loop with Ebiten
-- [ ] YAML/JSON-based scene file support
+- [x] YAML-based scene file support
 - [ ] Sprite rendering system
 - [ ] Input handling
-- [ ] Scene graph and node hierarchy
+- [x] Scene graph and node hierarchy
 
 ---
 
@@ -39,9 +39,8 @@ Currently in early development. The goal is to provide a flexible, minimalist, a
 ### Setup
 
 ```bash
-git clone git@github.com:your-org/umbra.git
+git clone https://github.com/Umbra-Engine/umbra.git
 cd umbra
-go run main.go
 ```
 
 ### Directory Structure
@@ -49,11 +48,14 @@ go run main.go
 ```
 cmd/umbra_demo       # Demo entry point
 engine/              # Core engine modules
+  ├── components/    # Game object components
+  ├── constants/     # Project constants
   ├── core/          # Game loop and timing
-  ├── graphics/      # 2D/3D rendering systems
-  ├── input/         # Input handling
+  ├── logger/        # Log systems
+  ├── mathx/         # Math equation handling
+  ├── runtime/       # Runtime handling
   ├── scene/         # Scene graph and loaders
-  ├── resources/     # Asset loading
+  ├── scripting/     # Custom script handling
 
 ```
 
