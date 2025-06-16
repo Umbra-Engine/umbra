@@ -3,3 +3,6 @@ window:
   width: 1280
   height: 720
   fullscreen: false
+
+game:
+  target_fps: 30

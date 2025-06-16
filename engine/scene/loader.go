@@ -31,5 +31,9 @@ func LoadScene(path string) (*Scene, error) {
 		scene.Objects[i].InitDefaults()
 	}
 
+	for i := range scene.Objects {
+		initRuntimeComponents(&scene.Objects[i])
+	}
+
 	return &scene, nil
 }

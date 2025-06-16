@@ -12,8 +12,13 @@ type WindowConfig struct {
 	Fullscreen bool   `yaml:"fullscreen"`
 }
 
+type GameConfig struct {
+	TargetFPS int `yaml:"target_fps"`
+}
+
 type Config struct {
 	Window WindowConfig `yaml:"window"`
+	Game   GameConfig   `yaml:"game"`
 }
 
 func LoadConfig(path string) (*Config, error) {
@@ -25,6 +30,11 @@ func LoadConfig(path string) (*Config, error) {
 	var cfg Config
 	if err := yaml.Unmarshal(data, &cfg); err != nil {
 		return nil, err
+	}
+
+	// Default to 60 FPS if no specification
+	if cfg.Game.TargetFPS <= 0 {
+		cfg.Game.TargetFPS = 60
 	}
 
 	return &cfg, nil
