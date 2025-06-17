@@ -2,6 +2,7 @@ package runtime
 
 import (
 	"github.com/Umbra-Engine/umbra/engine/logger"
+	"github.com/Umbra-Engine/umbra/engine/renderer"
 	"github.com/Umbra-Engine/umbra/engine/scene"
 	"time"
 )
@@ -47,6 +48,10 @@ func (sr *SceneRunner) Run(targetFPS int) {
 
 		for _, u := range sr.updatables {
 			u.Update(dt)
+		}
+
+		if sr.scene != nil {
+			renderer.DrawScene2D(sr.scene)
 		}
 		<-ticker.C
 	}

@@ -27,6 +27,8 @@ const (
 
 	// Sprite Renderer fields
 	FieldTexture = "texture"
+	FieldFlipX   = "flip_x"
+	FieldFlipY   = "flip_y"
 
 	// Transform fields
 	FieldPosition = "position"
