@@ -1,15 +1,18 @@
 package core
 
 import (
+	"github.com/Umbra-Engine/umbra/engine/mathx"
 	"gopkg.in/yaml.v3"
 	"os"
 )
 
 type WindowConfig struct {
-	Title      string `yaml:"title"`
-	Width      int    `yaml:"width"`
-	Height     int    `yaml:"height"`
-	Fullscreen bool   `yaml:"fullscreen"`
+	Title           string        `yaml:"title"`
+	Width           int           `yaml:"width"`
+	Height          int           `yaml:"height"`
+	Fullscreen      bool          `yaml:"fullscreen"`
+	BackgroundColor mathx.Vector4 `yaml:"background_color"` // [X: Red, Y: Green, Z: Blue, W: Alpha]
+	// TODO: Add option for monitor and share
 }
 
 type GameConfig struct {

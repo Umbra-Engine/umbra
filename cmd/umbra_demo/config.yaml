@@ -3,6 +3,7 @@ window:
   width: 1280
   height: 720
   fullscreen: false
+  background_color: { x: 0.1, y: 0.1, z: 0.1, w: 1.0 }
 
 game:
   target_fps: 30
